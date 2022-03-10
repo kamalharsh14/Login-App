@@ -1,33 +1,28 @@
 import React from "react";
 import Button from "./Button";
+import Checkbox from "./Checkbox";
 import Input from "./Input";
 import Logo from "./Logo";
+import fields from "./logInInputs";
 
 function Login(){
     return(
-      <div className="wrapper">
-          <Logo />
-          <div className="text-center mt-4 name"> Login </div>
-          <form className="p-3 mt-3">
-              <Input 
-              type="password" 
-              id="userName" 
-              placeholder="Username" 
-              />
-              <Input 
-              type="password" 
-              id="password" 
-              placeholder="Password" 
-              />
-              <Button
-              type = "Button"
-              toDisplay = "Login"
-              />
-          </form>
-          <div className="text-center fs-6">
-            <a href="#">Forgot password?</a> or <a href="#">Sign up</a> 
-          </div>
-      </div>
+      <form className="container mt-4 form-custom">
+        <Logo />
+        {fields.map(data => <Input type = {data.type} placeholder = {data.placeholder} key = {data.id}/>)}
+        <Checkbox />
+        <Button
+        type = "submit"
+        toDisplay = "Log in"
+        />
+        
+        <div class="col mb-2 mt-">
+          <a href="#!">Forgot password?</a>
+        </div>
+        <div class="text-center">
+          <p>Not a member? <a href="#!">Register</a></p>
+        </div>
+      </form>
     );
 }
 

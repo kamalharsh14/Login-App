@@ -4,7 +4,7 @@ import Dashboard from './Components/Dashboard';
 import SignUp from './Components/SignUp';
 
 
-function authenticaion(isloggedIn,isSignUp){
+function authenticaion(isSignUp,isloggedIn){
  if(isSignUp){
     if(isloggedIn){
       return <Dashboard />;
